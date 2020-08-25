@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.shoppingMain.ShoppingMainMainController">
+   <children>
+      <AnchorPane layoutX="30.0" layoutY="40.0" prefHeight="80.0" prefWidth="745.0" style="-fx-border-color: lightgreen; -fx-background-color: white;">
+         <children>
+            <Button fx:id="Shop_Cloth_Btn" layoutX="15.0" layoutY="20.0" mnemonicParsing="false" style="-fx-border-color: white; -fx-background-color: none;" text="의류">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="Shop_Beauty_Btn" layoutX="70.0" layoutY="20.0" mnemonicParsing="false" style="-fx-border-color: white; -fx-background-color: none;" text="뷰티">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="Shop_Food_Btn" layoutX="125.0" layoutY="20.0" mnemonicParsing="false" style="-fx-border-color: white; -fx-background-color: none;" text="식품">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="Shop_Baby_Btn" layoutX="180.0" layoutY="20.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="150.0" style="-fx-border-color: white; -fx-background-color: none;" text="출산/유아동">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="Shop_Digital_Btn" layoutX="315.0" layoutY="20.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="145.0" style="-fx-border-color: white; -fx-background-color: none;" text="디지털/가전">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="Shop_Interior_Btn" layoutX="440.0" layoutY="20.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="110.0" style="-fx-border-color: white; -fx-background-color: none;" text="인테리어">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="Shop_Sports_Btn" layoutX="535.0" layoutY="20.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="145.0" style="-fx-border-color: white; -fx-background-color: none;" text="스포츠/레저">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="Shop_life_Btn" layoutX="660.0" layoutY="20.0" mnemonicParsing="false" style="-fx-border-color: white; -fx-background-color: none;" text="생활">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="30.0" layoutY="140.0" prefHeight="80.0" prefWidth="745.0" style="-fx-border-color: lightgreen; -fx-background-color: white;">
+         <children>
+            <Button fx:id="Shop_Mencloth_Btn" layoutX="185.0" layoutY="20.0" mnemonicParsing="false" prefWidth="110.0" style="-fx-border-color: white; -fx-background-color: none;" text="남성의류">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="Shop_Womancloth_Btn" layoutX="315.0" layoutY="20.0" mnemonicParsing="false" prefWidth="110.0" style="-fx-border-color: white; -fx-background-color: none;" text="여성의류">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="Shop_Undercloth_Btn" layoutX="445.0" layoutY="20.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="110.0" style="-fx-border-color: white; -fx-background-color: none;" text="언더웨어">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="780.0" layoutY="40.0" prefHeight="180.0" prefWidth="240.0" style="-fx-border-color: orange;">
+         <children>
+            <Button fx:id="Mypage_Btn" layoutX="20.0" layoutY="30.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="200.0" style="-fx-border-color: white; -fx-background-color: none;" text="마이페이지">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+            <Button fx:id="Shopping_Btn" layoutX="30.0" layoutY="100.0" mnemonicParsing="false" prefWidth="180.0" style="-fx-border-color: white; -fx-background-color: none;" text="쇼핑하기">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="30.0" layoutY="230.0" prefHeight="760.0" prefWidth="990.0" style="-fx-border-color: lightblue;" />
+      <AnchorPane fx:id="Messenger" layoutX="1160.0" layoutY="40.0" prefHeight="950.0" prefWidth="400.0" style="-fx-border-color: gray;">
+         <children>
+            <Label layoutX="25.0" layoutY="20.0" prefHeight="60.0" prefWidth="80.0" text="친구">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Label>
+            <TextField alignment="CENTER" layoutX="25.0" layoutY="90.0" prefHeight="45.0" prefWidth="350.0" text="친구 검색">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </TextField>
+            <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="25.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true" />
+            <Label alignment="CENTER" layoutX="125.0" layoutY="180.0" prefHeight="45.0" prefWidth="250.0" style="-fx-border-color: gray;" text="이름">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <ListView layoutX="25.0" layoutY="260.0" prefHeight="70.0" prefWidth="350.0" />
+            <ListView layoutX="25.0" layoutY="350.0" prefHeight="70.0" prefWidth="350.0" />
+            <ListView layoutX="25.0" layoutY="440.0" prefHeight="480.0" prefWidth="350.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="1030.0" layoutY="40.0" prefHeight="950.0" prefWidth="125.0" style="-fx-border-color: gray;">
+         <children>
+            <Button fx:id="Friend_List_Btn" layoutX="12.0" layoutY="30.0" mnemonicParsing="false" onAction="#friendListBtnOnAction" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: lightblue;" text="친구목록" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="Chat_Room_List_Btn" layoutX="12.0" layoutY="160.0" mnemonicParsing="false" onAction="#chatRoomBtnOnAction" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: lightblue;" text="채팅목록" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="Qna_List_Btn" layoutX="12.0" layoutY="420.0" mnemonicParsing="false" onAction="#qnaBtnOnAction" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: lightblue;" text="Q&amp;A" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="Faq_List_Btn" layoutX="12.0" layoutY="290.0" mnemonicParsing="false" onAction="#faqBtnOnAction" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: lightblue;" text="FAQ" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="Notice_List_Btn" layoutX="12.0" layoutY="550.0" mnemonicParsing="false" onAction="#noticeBtnOnAction" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: lightblue;" text="공지사항" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="Configuration_List_Btn" layoutX="12.0" layoutY="680.0" mnemonicParsing="false" onAction="#configurationBtnOnAction" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: lightblue;" text="환경설정" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Button fx:id="Shop_Cateedit_Btn" layoutX="715.0" layoutY="35.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" style="-fx-background-color: none;" text="편집" textFill="RED">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="Shop_Dcateedit_Btn" layoutX="715.0" layoutY="135.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" style="-fx-background-color: none;" text="편집" textFill="RED">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

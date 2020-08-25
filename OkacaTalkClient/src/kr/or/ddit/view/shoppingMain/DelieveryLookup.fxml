@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="760.0" prefWidth="990.0" style="-fx-border-color: lightblue; -fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="440.0" layoutY="40.0" text="배송 조회">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="95.0" layoutY="100.0" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: white; -fx-border-color: gray;">
+         <children>
+            <ImageView fx:id="Order_Product_Img" fitHeight="300.0" fitWidth="300.0" layoutX="250.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="Delivery_Arrival_Label" layoutX="350.0" layoutY="425.0" text="도착 예정일">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="Delivery_Info_Label" layoutX="270.0" layoutY="475.0" text="배송정보(배송 상태 및 배송지)">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

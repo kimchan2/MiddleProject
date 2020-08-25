@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="990.0" style="-fx-background-color: white; -fx-border-color: lightblue;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="30.0" layoutY="20.0" text="상품 상세 페이지">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="Shop_Cate_Label" alignment="CENTER" layoutX="525.0" layoutY="140.0" prefHeight="35.0" prefWidth="170.0" text="카테고리" textAlignment="CENTER">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="Shop_Decate_Label" alignment="CENTER" layoutX="700.0" layoutY="140.0" prefHeight="35.0" prefWidth="215.0" text="세부 카테고리" textAlignment="CENTER">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="Shop_Proname_Label" alignment="CENTER" layoutX="525.0" layoutY="210.0" prefHeight="35.0" prefWidth="390.0" text="상품명" textAlignment="CENTER">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="Shop_Proprice_Label" alignment="CENTER" layoutX="525.0" layoutY="290.0" prefHeight="35.0" prefWidth="390.0" text="상품 가격" textAlignment="CENTER">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="Shop_Prooption_Btn" alignment="CENTER" layoutX="525.0" layoutY="370.0" prefHeight="35.0" prefWidth="390.0" text="상품 옵션" textAlignment="CENTER">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="Shop_Quantity_Combo" layoutX="525.0" layoutY="457.0" prefHeight="20.0" prefWidth="70.0" />
+      <ImageView fitHeight="450.0" fitWidth="450.0" layoutX="30.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="Shop_Back_Btn" layoutX="30.0" layoutY="70.0" mnemonicParsing="false" text="뒤로가기" />
+      <Button fx:id="Shop_Cart_Btn" layoutX="645.0" layoutY="450.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: white; -fx-border-color: gray;" text="장바구니">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="Shop_Buy_Btn" layoutX="805.0" layoutY="450.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: white; -fx-border-color: gray;" text="구매하기">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="Shop_Wishcart_Btn" layoutX="525.0" layoutY="530.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: white; -fx-border-color: gray;" text="관심상품 추가">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="Shop_Review_Btn" layoutX="690.0" layoutY="530.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: white; -fx-border-color: gray;" text="상품리뷰">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Text fx:id="Shop_Proexplain_Text" layoutX="30.0" layoutY="630.0" strokeType="OUTSIDE" strokeWidth="0.0" text="상품 상세 설명" textAlignment="CENTER" wrappingWidth="885.65625">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Button fx:id="Shop_Qna_Btn" layoutX="805.0" layoutY="530.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: white; -fx-border-color: gray;" text="문의사항">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="Shop_Cateedit_Btn" layoutX="655.0" layoutY="130.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" style="-fx-background-color: none;" text="편집" textFill="RED">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="Shop_Dcateedit_Btn" layoutX="885.0" layoutY="130.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" style="-fx-background-color: none;" text="편집" textFill="RED">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="Shop_Nameedit_Btn" layoutX="755.0" layoutY="205.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" style="-fx-background-color: none;" text="편집" textFill="RED">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="Shop_Priceedit_Btn" layoutX="775.0" layoutY="285.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" style="-fx-background-color: none;" text="편집" textFill="RED">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="Shop_Optionedit_Btn" layoutX="775.0" layoutY="365.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" style="-fx-background-color: none;" text="편집" textFill="RED">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="Shop_Explainedit_Btn" layoutX="565.0" layoutY="595.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" style="-fx-background-color: none;" text="편집" textFill="RED">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

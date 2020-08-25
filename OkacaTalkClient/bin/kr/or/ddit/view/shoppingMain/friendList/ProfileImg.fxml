@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane fx:id="ProfileImg_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="449.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.shoppingMain.friendList.ProfileImgController">
+   <content>
+      <ImageView fx:id="ProfileImg_Img" fitHeight="447.0" fitWidth="598.0" onScroll="#ProfileImgOnScroll" pickOnBounds="true" preserveRatio="true" />
+   </content>
+</ScrollPane>

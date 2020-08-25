@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+			PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+			"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+<sqlMap namespace="selenium">
+
+	<insert id="insertCategory" parameterClass="cgVO">
+	
+		INSERT INTO categorylist VALUES (cl_index_seq.NEXTVAL, #cl_category#, #cl_detail_category#)
+	
+	</insert>
+
+	<insert id="insertProduct" parameterClass="pdVO">
+	
+		INSERT INTO productlist VALUES (
+			pl_index_seq.NEXTVAL,
+			#cl_index#,
+			#pl_name#,
+			#pl_price#,
+			#pl_image#,
+			TRUNC(DBMS_RANDOM.VALUE(100,225)),
+			SYSDATE,
+			0)
+		
+	
+	</insert>
+	
+	<select id="getCategoryIndex" parameterClass="String" resultClass="int">
+		SELECT cl_index
+		FROM categorylist
+		WHERE cl_detail_category = #cl_detail_category#
+	</select>
+	
+</sqlMap>

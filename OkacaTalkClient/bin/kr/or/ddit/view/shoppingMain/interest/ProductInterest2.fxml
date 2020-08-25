@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="InterestMain" prefHeight="760.0" prefWidth="990.0" style="-fx-border-color: none; -fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.shoppingMain.interest.ProductInterestController">
+   <children>
+      <ImageView fitHeight="80.0" fitWidth="130.0" layoutX="430.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../image/interest.png" />
+         </image>
+      </ImageView>
+      <ScrollPane fx:id="InterestSC" layoutX="95.0" layoutY="150.0" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: white;">
+        <content>
+            <VBox fx:id="InterestVBox" prefHeight="498.0" prefWidth="798.0" style="-fx-background-color: white;" />
+        </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+			PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+			"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+			
+<sqlMap namespace="fileList">
+	
+	<insert id="insertFileListVO" parameterClass="map">
+		{call
+			BEGIN
+				INSERT INTO ChatMessage VALUES(
+					cm_index_seq.NEXTVAL,
+					#cmvo.mem_mail#,
+					#cmvo.cr_index#,
+					#cmvo.cm_content# || ' 파일명 : ' || #flvo.f_name#,
+					SYSDATE,
+					#cmvo.cm_ischeck#
+				);
+				INSERT INTO FileList VALUES (
+					f_index_seq.NEXTVAL,
+					cm_index_seq.CURRVAL,
+					#flvo.f_name#,
+					#flvo.f_type#,
+					#flvo.f_addr#
+					
+				);
+			END
+		}
+		
+		<selectKey resultClass="cmVO">
+			SELECT cm_index_seq.CURRVAL as cm_index, #cmvo.cm_content# || ' 파일명 : ' || #flvo.f_name# as cm_content
+			FROM dual
+		</selectKey>
+	</insert>
+	
+	<select id="getFileBYcm_index" parameterClass="int" resultClass="flVO">
+		SELECT *
+		FROM FileList
+		WHERE cm_index = #cm_index#
+	</select>
+	
+</sqlMap>

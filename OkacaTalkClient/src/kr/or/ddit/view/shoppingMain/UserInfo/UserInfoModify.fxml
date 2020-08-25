@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="AnchorPane" prefHeight="760.0" prefWidth="990.0" style="-fx-border-color: none; -fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.shoppingMain.UserInfo.UserInfoModifyController">
+   <children>
+      <AnchorPane layoutX="95.0" layoutY="120.0" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: white; -fx-border-color: lightgray;">
+         <children>
+            <Label layoutX="140.0" layoutY="110.0" prefHeight="25.0" prefWidth="160.0" text="현재 비밀번호">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="140.0" layoutY="210.0" prefHeight="25.0" prefWidth="160.0" text="비밀번호 확인">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="140.0" layoutY="260.0" prefHeight="25.0" prefWidth="160.0" text="전화번호">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="140.0" layoutY="310.0" prefHeight="25.0" prefWidth="160.0" text="닉네임">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="140.0" layoutY="360.0" prefHeight="25.0" prefWidth="160.0" text="주소">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="140.0" layoutY="410.0" prefHeight="25.0" prefWidth="160.0" text="상세 주소">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <TextField fx:id="User_Phone_Text" layoutX="320.0" layoutY="255.0" prefHeight="40.0" prefWidth="365.0" style="-fx-background-color: white; -fx-border-color: gray;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="User_Nick_Text" layoutX="320.0" layoutY="305.0" prefHeight="40.0" prefWidth="290.0" style="-fx-background-color: white; -fx-border-color: gray;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="User_Addr_Text" layoutX="320.0" layoutY="355.0" prefHeight="40.0" prefWidth="365.0" style="-fx-background-color: white; -fx-border-color: gray;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="User_Detailaddr_Text" layoutX="320.0" layoutY="405.0" prefHeight="40.0" prefWidth="365.0" style="-fx-background-color: white; -fx-border-color: gray;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <Button fx:id="User_Modifyconfirm_Btn" layoutX="275.0" layoutY="465.0" mnemonicParsing="false" onAction="#UserModifyOkBtnOnAction" prefHeight="50.0" prefWidth="90.0" style="-fx-background-color: f5efa5; -fx-border-color: none;" text="수정">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Button>
+            <Label layoutX="140.0" layoutY="160.0" prefHeight="25.0" prefWidth="160.0" text="새 비밀번호">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Button fx:id="User_Nickchk_Btn" alignment="CENTER" contentDisplay="CENTER" layoutX="615.0" layoutY="305.0" mnemonicParsing="false" onAction="#UserNickchkBtnOnAction" prefHeight="40.0" prefWidth="70.0" style="-fx-background-color: white; -fx-border-color: gray;" text="중복 확인" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="User_Modify_Can_Btn" layoutX="465.0" layoutY="465.0" mnemonicParsing="false" onAction="#UserModifyCanBtnOnAction" prefHeight="50.0" prefWidth="90.0" style="-fx-background-color: f5efa5; -fx-border-color: none;" text="취소">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Button>
+            <PasswordField fx:id="User_Pass_Text" layoutX="320.0" layoutY="105.0" prefHeight="40.0" prefWidth="365.0" style="-fx-background-color: white; -fx-border-color: gray;" />
+            <PasswordField fx:id="User_Newpass_Text" layoutX="320.0" layoutY="155.0" prefHeight="40.0" prefWidth="365.0" style="-fx-background-color: white; -fx-border-color: gray;" />
+            <PasswordField fx:id="User_Passchk_Text" layoutX="320.0" layoutY="205.0" prefHeight="40.0" prefWidth="365.0" style="-fx-background-color: white; -fx-border-color: gray;" />
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="400.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../image/userinfomodify.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

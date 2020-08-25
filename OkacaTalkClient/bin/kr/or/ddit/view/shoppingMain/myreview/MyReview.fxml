@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane prefHeight="760.0" prefWidth="990.0" style="-fx-border-color: lightblue; -fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="445.0" layoutY="50.0" text="나의 리뷰">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <ScrollPane layoutX="95.0" layoutY="120.0" prefHeight="600.0" prefWidth="800.0">
+         <content>
+            <AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: white; -fx-border-color: gray;">
+               <children>
+                  <AnchorPane fx:id="ReviewView" layoutX="30.0" layoutY="20.0" prefHeight="310.0" prefWidth="720.0">
+                     <children>
+                        <ScrollPane layoutX="15.0" layoutY="170.0" prefHeight="75.0" prefWidth="500.0" style="-fx-background-color: white;">
+                           <content>
+                              <TextFlow fx:id="Review_Show_Text" prefHeight="68.0" prefWidth="498.0" />
+                           </content>
+                        </ScrollPane>
+                        <ScrollPane layoutX="15.0" layoutY="250.0" prefHeight="50.0" prefWidth="500.0" style="-fx-background-color: white;">
+                           <content>
+                              <TextFlow fx:id="Review_Commentshow_Text" prefHeight="48.0" prefWidth="498.0" />
+                           </content>
+                        </ScrollPane>
+                        <Button fx:id="Review_DeclarationNum_Btn" layoutX="535.0" layoutY="170.0" mnemonicParsing="false" style="-fx-background-color: white; -fx-border-color: gray;" text="신고수" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="Review_RecommendNum_Btn" layoutX="630.0" layoutY="170.0" mnemonicParsing="false" style="-fx-background-color: white; -fx-border-color: gray;" text="추천수" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="Review_Modify_Btn" layoutX="535.0" layoutY="210.0" mnemonicParsing="false" style="-fx-background-color: white; -fx-border-color: gray;" text="수정" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="Review_Delete_Btn" layoutX="648.0" layoutY="210.0" mnemonicParsing="false" style="-fx-background-color: white; -fx-border-color: gray;" text="삭제" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <ImageView fx:id="Product_Img" fitHeight="150.0" fitWidth="200.0" layoutX="50.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="Product_Name_Label" layoutX="300.0" layoutY="50.0" text="제품 이름">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="Product_Price_Label" layoutX="300.0" layoutY="90.0" text="제품 가격">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMapConfig      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+	<!-- 
+	DB와 연결하는 정보를 properties파일에 설정해 놓고 이 properties파일의
+	내용을 읽어와 설정한다.
+	 -->
+	<properties resource="SqlMapConfig.properties" />
+	
+	<!-- ibatis를 처리하기 위한 환경설정 부분 -->
+	<settings cacheModelsEnabled="true" enhancementEnabled="true"
+		lazyLoadingEnabled="true" maxRequests="32" maxSessions="10"
+		maxTransactions="5" useStatementNamespaces="true" />
+
+	<!-- 
+	VO클래스등의 이름이 패키지명까지 기술하면 길어지는데 이것을 간단히
+	표시하기 위해서 alias를 지정할 수 있다.
+	형식) <typeAlias alias="alias명" type="클래스의 풀네임"/>
+	 -->
+	<typeAlias alias="memVO" type="kr.or.ddit.vo.MemberVO"/>
+	<typeAlias alias="chatroomVO" type="kr.or.ddit.vo.ChatRoomVO"/>
+	<typeAlias alias="frVO" type="kr.or.ddit.vo.FriendListVO"/>
+	<typeAlias alias="pcVO" type="kr.or.ddit.vo.ParticipantVO"/>
+	<typeAlias alias="prodVO" type="kr.or.ddit.vo.ProductListVO"/>
+	<typeAlias alias="cateVO" type="kr.or.ddit.vo.CategoryListVO"/>
+	<typeAlias alias="pilVO" type="kr.or.ddit.vo.ProfileImgListVO"/>
+	<typeAlias alias="bilVO" type="kr.or.ddit.vo.BackgroundImgListVO"/>
+	<typeAlias alias="cmVO" type="kr.or.ddit.vo.ChatMessageVO"/>
+	<typeAlias alias="ccVO" type="kr.or.ddit.vo.ChargeCashVO"/>
+	<typeAlias alias="ucVO" type="kr.or.ddit.vo.UsingCashVO"/>
+	<typeAlias alias="spVO" type="kr.or.ddit.vo.SavePointVO"/>
+	<typeAlias alias="upVO" type="kr.or.ddit.vo.UsingPointVO"/>
+	<typeAlias alias="flVO" type="kr.or.ddit.vo.FileListVO"/>
+	<typeAlias alias="iqVO" type="kr.or.ddit.vo.InquireVO"/>
+	<typeAlias alias="iqjVO" type="kr.or.ddit.vo.InquireJoinVO"/>
+	<typeAlias alias="orderVO" type="kr.or.ddit.vo.OrderListVO"/>
+	<typeAlias alias="orderdetailVO" type="kr.or.ddit.vo.OrderDetailVO"/>
+	<typeAlias alias="orderdetaillistVO" type="kr.or.ddit.vo.OrderDetailListVO"/>
+	<typeAlias alias="cartVO" type="kr.or.ddit.vo.ShoppingCartVO"/>
+	<typeAlias alias="fvVO" type="kr.or.ddit.vo.FavoriteVO"/>
+	<typeAlias alias="fvlistVO" type="kr.or.ddit.vo.FavoriteListVO"/>
+    <typeAlias alias="bmVO" type="kr.or.ddit.vo.BookMarkVO"/>
+    <typeAlias alias="reviewVO" type="kr.or.ddit.vo.ReviewVO"/>
+    <typeAlias alias="qnaVO" type="kr.or.ddit.vo.QnAVO"/>
+    <typeAlias alias="noticeVO" type="kr.or.ddit.vo.NoticeVO"/>
+    <typeAlias alias="myreviewVO" type="kr.or.ddit.vo.MyReviewVO"/>
+    <typeAlias alias="faqVO" type="kr.or.ddit.vo.FAQVO"/>
+    <typeAlias alias="qnaCmtVO" type="kr.or.ddit.vo.QnACmtVO"/>
+    <typeAlias alias="attachVO" type="kr.or.ddit.vo.AttachmentVO"/>
+
+	<!-- 
+	DB와의 연결을 처리하는 부분
+	SqlMapConfig.properties에 설정해 놓은 정보를 이용하여 구성한다.
+	1. SIMPLE => SimpleDataSourceFactory
+		SimpleDataSource는 데이터소스를 제공하는 컨테이너가 없는 경우 connection을 제공하기 위해 기본적으로 pooling 데이터소스 구현을 제공한다. 
+		이것은 iBATIS SimpleDataSource connection pooling을 기반으로 한다.
+		
+	2. DBCP => DbcpDataSourceFactory
+	DbcpDataSourceFactory는 DataSource API를 통해 connection pooling 서비스를 제공하기 위해 DBCP를 사용한다.
+	이 DataSource는 어플리케이션/웹 컨테이너가 DataSource 구현물을 제공하지 못하거나 standalone 어플리케이션을 구동할 때 이상적이다.
+    
+    3. JNDI => JndiDataSourceFactory
+ 	JndiDataSourceFactory 는 어플리케이션 컨테이너내 JNDI 컨텍스트로부터 DataSource 구현물을 가져와야 한다. 
+ 	이것은 어플리케이션 서버를 사용중이고 컨테이너 관리 connection pool 과 DataSource 가 제공될 때 사용한다.
+ 	JDBC DataSource 구현물에 접근하기 위한 표준적인 방법은 JNDI 컨텍스트를 통하여 접근하는 것이다.
+
+
+
+	 -->
+	<transactionManager type="JDBC">
+		<dataSource type="SIMPLE">
+		<!--
+			각종 설정을 직접 기술해서 처리할 수도 있다. 
+			<property name="JDBC.Driver" value="oracle.jdbc.driver.OracleDriver" />
+		 -->
+			<property name="JDBC.Driver" value="${driver}" />
+			<property name="JDBC.ConnectionURL" value="${url}" />
+			<property name="JDBC.Username" value="${username}" />
+			<property name="JDBC.Password" value="${password}" />
+		</dataSource>
+	</transactionManager>
+	
+	<!-- 
+	실제 처리할 SQL문은 xml문서로 따로 만든 후
+	그 xml문서와 아래와 같이 연결하여 사용한다.
+	형식) <sqlMap resource="경로명/파일명.xml"/> 
+	-->
+	<!-- <sqlMap resource="kr/or/ddit/basic/member.xml" /> -->
+	<sqlMap resource="kr/or/ddit/xml/member.xml" />
+	<sqlMap resource="kr/or/ddit/xml/chatRoom.xml" />
+	<sqlMap resource="kr/or/ddit/xml/friendList.xml" />
+	<sqlMap resource="kr/or/ddit/xml/participant.xml" />
+	<sqlMap resource="kr/or/ddit/xml/productList.xml"/>
+	<sqlMap resource="kr/or/ddit/xml/profileImgList.xml"/>
+	<sqlMap resource="kr/or/ddit/xml/BackgroundImgList.xml"/>
+	<sqlMap resource="kr/or/ddit/xml/chatMessage.xml"/>
+	<sqlMap resource="kr/or/ddit/xml/Cash.xml"/>
+	<sqlMap resource="kr/or/ddit/xml/point.xml"/>
+	<sqlMap resource="kr/or/ddit/xml/fileList.xml"/>
+	<sqlMap resource="kr/or/ddit/xml/inquire.xml"/>
+	<sqlMap resource="kr/or/ddit/xml/orderList.xml"/>
+	<sqlMap resource="kr/or/ddit/xml/favoritelist.xml"/>
+	<sqlMap resource="kr/or/ddit/xml/bookmark.xml"/>
+	<sqlMap resource="kr/or/ddit/xml/myreview.xml"/>
+	<sqlMap resource="kr/or/ddit/xml/shoppingCart.xml"/>
+	<sqlMap resource="kr/or/ddit/xml/qna.xml"/>
+	<sqlMap resource="kr/or/ddit/xml/notice.xml"/>
+	<sqlMap resource="kr/or/ddit/xml/faq.xml"/>
+	<sqlMap resource="kr/or/ddit/xml/attachment.xml"/>
+	<sqlMap resource="kr/or/ddit/xml/qnaCmt.xml"/>
+	
+</sqlMapConfig>
+
+
+
+
+
+

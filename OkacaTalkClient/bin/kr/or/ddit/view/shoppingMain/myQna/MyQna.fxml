@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="MyQnamain" prefHeight="760.0" prefWidth="990.0" style="-fx-border-color: nonw; -fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.shoppingMain.myQna.MyQnaController">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="410.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../image/myqna.png" />
+         </image>
+      </ImageView>
+      <ScrollPane fx:id="MyQnaSC" hbarPolicy="NEVER" layoutX="95.0" layoutY="120.0" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: white;">
+         <content>
+            <VBox fx:id="MyQnaVbox" prefHeight="598.0" prefWidth="798.0" style="-fx-background-color: white; -fx-border-color: lightgray;" />
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

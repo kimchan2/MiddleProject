@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="950.0" prefWidth="400.0" style="-fx-border-color: gray; -fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.shoppingMain.ChatListController">
+   <children>
+      <Label layoutX="25.0" layoutY="30.0" prefHeight="34.0" prefWidth="129.0" text="FAQ">
+         <font>
+            <Font size="40.0" />
+         </font></Label>
+      <AnchorPane layoutX="30.0" layoutY="100.0" prefHeight="800.0" prefWidth="340.0" style="-fx-background-color: white; -fx-border-color: gray;">
+         <children>
+            <Label layoutX="30.0" layoutY="30.0" text="FAQ 목록">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Button fx:id="Faq_Chat_Btn" layoutX="60.0" layoutY="80.0" mnemonicParsing="false" style="-fx-background-color: white; -fx-border-color: gray;" text="채팅">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="Faq_Login_Btn" layoutX="190.0" layoutY="80.0" mnemonicParsing="false" style="-fx-background-color: white; -fx-border-color: gray;" text="로그인">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <ScrollPane layoutX="30.0" layoutY="145.0" prefHeight="550.0" prefWidth="280.0">
+               <content>
+                  <ListView fx:id="Faq_Content_List" prefHeight="550.0" prefWidth="280.0" scaleX="0.0" scaleY="0.0" scaleZ="0.0">
+                     <rotationAxis>
+                        <Point3D />
+                     </rotationAxis>
+                  </ListView>
+               </content>
+            </ScrollPane>
+            <Button fx:id="Faq_Write_Btn" layoutX="240.0" layoutY="715.0" mnemonicParsing="false" style="-fx-background-color: wihite; -fx-border-color: gray;" text="작성">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

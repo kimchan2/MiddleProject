@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="990.0" style="-fx-background-color: white; -fx-border-color: lightblue;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="30.0" layoutY="20.0" text="상품 문의 사항">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="Qna_Num_Label" alignment="CENTER" layoutX="500.0" layoutY="235.0" prefHeight="25.0" prefWidth="60.0" text="글번호" textAlignment="CENTER">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="Qna_Title_Label" alignment="CENTER" layoutX="570.0" layoutY="235.0" prefHeight="25.0" prefWidth="200.0" text="제목" textAlignment="CENTER">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="Shop_Product_Img" fitHeight="450.0" fitWidth="450.0" layoutX="30.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="Shop_Back_Btn" layoutX="30.0" layoutY="70.0" mnemonicParsing="false" text="뒤로가기" />
+      <Label fx:id="Qna_Date_Label" alignment="CENTER" layoutX="780.0" layoutY="235.0" prefHeight="25.0" prefWidth="80.0" text="작성일" textAlignment="CENTER">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="Qna_Writer_Label" alignment="CENTER" layoutX="870.0" layoutY="235.0" prefHeight="25.0" prefWidth="80.0" text="작성자" textAlignment="CENTER">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TableView fx:id="Review_Comment_Table" layoutX="500.0" layoutY="365.0" prefHeight="120.0" prefWidth="440.0">
+         <columns>
+            <TableColumn prefWidth="74.0" text="댓글 번호" />
+            <TableColumn prefWidth="275.0" text="댓글 내용" />
+            <TableColumn minWidth="0.0" prefWidth="90.0" text="댓글 작성자" />
+         </columns>
+      </TableView>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="500.0" layoutY="270.0" prefHeight="80.0" prefWidth="440.0" text="내용" textAlignment="CENTER" wrapText="true" />
+      <Button fx:id="Qnacomment_Delete_Btn" layoutX="830.0" layoutY="510.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="110.0" style="-fx-background-color: white; -fx-border-color: gray;" text="댓글 삭제">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="Qna_Delete_Btn" layoutX="670.0" layoutY="510.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="140.0" style="-fx-background-color: white; -fx-border-color: gray;" text="문의사항 삭제">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

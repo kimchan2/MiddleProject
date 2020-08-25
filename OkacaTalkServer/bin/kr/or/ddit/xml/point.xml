@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+			PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+			"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<!-- namespace속성 : 아래에작성한 SQL을 호출할때 같이 사용된다. -->
+<sqlMap namespace="point">
+
+<!-- 	<insert id="insertChargepoint" parameterClass="ccVO"> -->
+<!-- 		INSERT INTO CHARGECASH VALUES (cc_index_seq.nextval,#mem_mail#, #cc_cash#, sysdate) -->
+<!-- 	</insert> -->
+	
+		<select id="getSavepoint" parameterClass="String" resultClass="spVO">
+		SELECT *
+		FROM savepoint
+		WHERE mem_mail = #mem_mail#
+		ORDER BY SP_DATE DESC
+	
+	</select>
+	
+			<select id="getUsingpoint" parameterClass="String" resultClass="upVO">
+	    SELECT *
+        FROM USINGPOINT
+        WHERE mem_mail = #mem_mail# 
+        ORDER BY UP_DATE DESC
+	</select>
+	
+	<insert id="insertusingpointlist" parameterClass="upVO">
+		INSERT INTO UsingPoint VALUES(#mem_mail#, #o_index#, #up_point#, SYSDATE)
+	</insert>
+	
+	<insert id="insertsavepoint" parameterClass="spVO">
+		INSERT INTO SavePoint VALUES(#mem_mail#, #o_index#, #sp_point#, SYSDATE)
+	</insert>
+</sqlMap>
+
+
+
+

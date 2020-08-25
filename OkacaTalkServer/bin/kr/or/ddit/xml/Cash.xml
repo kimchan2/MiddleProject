@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+			PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+			"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<!-- namespace속성 : 아래에작성한 SQL을 호출할때 같이 사용된다. -->
+<sqlMap namespace="cash">
+
+	<insert id="insertChargeCash" parameterClass="ccVO">
+		INSERT INTO CHARGECASH VALUES (cc_index_seq.nextval,#mem_mail#, #cc_cash#, sysdate)
+	</insert>
+	
+		<select id="selectChargeCash" parameterClass="String" resultClass="ccVO">
+		SELECT *
+		FROM CHARGECASH
+		WHERE mem_mail = #mem_mail#
+		ORDER BY CC_INDEX DESC
+	
+	</select>
+	
+			<select id="getUsingCash" parameterClass="String" resultClass="ucVO">
+		SELECT *
+		FROM USINGCASH
+		WHERE mem_mail = #mem_mail#
+		ORDER BY UC_DATE DESC
+	
+	</select>
+	
+	<insert id="insertuingcashlist" parameterClass="ucVO">
+		INSERT INTO UsingCash VALUES(#mem_mail#, #o_index#, #uc_cash#, SYSDATE)
+	</insert>
+
+</sqlMap>
+
+
+
+

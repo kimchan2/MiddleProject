@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="an_adminMain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="990.0" style="-fx-border-color: gray; -fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.admin.AdminCrudPageController">
+   <children>
+      <ScrollPane layoutX="15.0" layoutY="150.0" prefHeight="500.0" prefWidth="960.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="960.0">
+               <children>
+                  <TableView fx:id="tableview" prefHeight="500.0" prefWidth="960.0" style="-fx-background-color: transparent;">
+                    <columns>
+                      <TableColumn fx:id="tb_col_mail" prefWidth="184.0" style="-fx-alignment: CENTER;" text="메일" />
+                      <TableColumn fx:id="tb_col_birth" minWidth="4.0" prefWidth="94.0" style="-fx-alignment: CENTER;" text="생일" />
+                        <TableColumn fx:id="tb_col_nik" prefWidth="58.0" style="-fx-alignment: CENTER;" text="닉네임" />
+                        <TableColumn fx:id="tb_col_name" minWidth="0.0" prefWidth="57.0" style="-fx-alignment: CENTER;" text="이름" />
+                        <TableColumn fx:id="tb_col_phone" prefWidth="111.0" style="-fx-alignment: CENTER;" text="전화번호" />
+                        <TableColumn fx:id="tb_col_addr" prefWidth="226.0" style="-fx-alignment: CENTER;" text="주소" />
+                        <TableColumn fx:id="tb_col_cash" minWidth="7.0" prefWidth="60.0" style="-fx-alignment: CENTER;" text="캐시" />
+                        <TableColumn fx:id="tb_col_point" prefWidth="62.0" style="-fx-alignment: CENTER;" text="포인트" />
+                        <TableColumn fx:id="tb_col_message" prefWidth="107.0" style="-fx-alignment: CENTER;" text="상태메시지" />
+                    </columns>
+                  </TableView>
+                  <Pagination fx:id="page_allMember" prefHeight="550.0" prefWidth="960.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="15.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../image/오카카톡.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="775.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../image/member.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

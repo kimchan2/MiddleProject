@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+			PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+			"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+			
+<sqlMap namespace="attach">
+	<insert id="insertQaFile" parameterClass="attachVO">
+	
+		INSERT INTO attachment VALUES (
+			acm_index_seq.NEXTVAL,
+			#qa_index#,
+			0,
+			0,
+			#acm_name#,
+			#acm_type#,
+			#acm_addr#
+		)
+		<selectKey resultClass="int">
+			SELECT acm_index_seq.CURRVAL
+			FROM dual
+		</selectKey>
+	</insert>
+	
+	<select id="selectQaFile" parameterClass="int" resultClass="String">
+		SELECT acm_addr
+		FROM attachment
+		WHERE qa_index = #qa_index#
+	</select>
+	
+	<insert id="insertInqFile" parameterClass="attachVO">
+	
+		INSERT INTO attachment VALUES (
+			acm_index_seq.NEXTVAL,
+			0,
+			0,
+			#iq_index#,
+			#acm_name#,
+			#acm_type#,
+			#acm_addr#
+		)
+		<selectKey resultClass="int">
+			SELECT acm_index_seq.CURRVAL
+			FROM dual
+		</selectKey>
+	</insert>
+		
+	<insert id="insertRvFile" parameterClass="attachVO">
+	
+		INSERT INTO attachment VALUES (
+			acm_index_seq.NEXTVAL,
+			0,
+			#rv_index#,
+			0,
+			#acm_name#,
+			#acm_type#,
+			#acm_addr#
+		)
+		<selectKey resultClass="int">
+			SELECT acm_index_seq.CURRVAL
+			FROM dual
+		</selectKey>
+	</insert>
+</sqlMap>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="Shop_Dcate" prefHeight="80.0" prefWidth="780.0" style="-fx-border-color: none; -fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.shoppingMain.category.DcateLifeController">
+   <children>
+      <Button fx:id="Shop_Furniture_Btn" layoutX="180.0" layoutY="20.0" mnemonicParsing="false" onAction="#ShopFurnitureBtnOnAction" prefWidth="120.0" style="-fx-border-color: white; -fx-background-color: none;" text="가구/DIY">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="Shop_Bed_Btn" layoutX="300.0" layoutY="20.0" mnemonicParsing="false" onAction="#ShopBedBtnOnAction" prefWidth="130.0" style="-fx-border-color: white; -fx-background-color: none;" text="침구/커튼">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="Shop_Interior_Btn" layoutX="430.0" layoutY="20.0" mnemonicParsing="false" onAction="#ShopInteriorBtnOnAction" prefWidth="170.0" style="-fx-border-color: white; -fx-background-color: none;" text="조명/인테리어">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

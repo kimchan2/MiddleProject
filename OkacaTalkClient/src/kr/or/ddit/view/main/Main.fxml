@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.main.MainMainController">
+   <children>
+      <Button fx:id="Mem_Join_Btn" layoutX="851.0" layoutY="527.0" mnemonicParsing="false" onAction="#memJoinBtnOnAction" prefHeight="151.0" prefWidth="311.0" style="-fx-background-color: f5efa5;" text="회원가입">
+         <font>
+            <Font size="46.0" />
+         </font>
+      </Button>
+      <Button fx:id="Mem_GoLogin_Btn" layoutX="440.0" layoutY="530.0" mnemonicParsing="false" onAction="#memGoLoginBtnOnAction" prefHeight="151.0" prefWidth="311.0" style="-fx-background-color: f5efa5;" text="로그인">
+         <font>
+            <Font size="46.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="300.0" fitWidth="450.0" layoutX="580.0" layoutY="242.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../image/오카카톡.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="Shop_Dcate" prefHeight="80.0" prefWidth="780.0" style="-fx-border-color: none; -fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.shoppingMain.category.DcateDigitalController">
+   <children>
+      <Button fx:id="Shop_PC_Btn" layoutX="25.0" layoutY="20.0" mnemonicParsing="false" onAction="#ShopPCBtnOnAction" prefWidth="130.0" style="-fx-border-color: white; -fx-background-color: none;" text="노트북/PC">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="Shop_Monitor_Btn" layoutX="155.0" layoutY="20.0" mnemonicParsing="false" onAction="#ShopMonitorBtnOnAction" prefWidth="170.0" style="-fx-border-color: white; -fx-background-color: none;" text="모니터/프린터">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="Shop_PCdevice_Btn" layoutX="325.0" layoutY="20.0" mnemonicParsing="false" onAction="#ShopPCdeviceBtnOnAction" prefWidth="140.0" style="-fx-border-color: white; -fx-background-color: none;" text="PC주변기기">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="Shop_Mobile_Btn" layoutX="465.0" layoutY="20.0" mnemonicParsing="false" onAction="#ShopMobileBtnOnAction" prefWidth="170.0" style="-fx-border-color: white; -fx-background-color: none;" text="모바일/태블릿">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="Shop_Homeappliance_Btn" layoutX="635.0" layoutY="20.0" mnemonicParsing="false" onAction="#ShopHomeapplianceBtnOnAction" prefWidth="110.0" style="-fx-border-color: white; -fx-background-color: none;" text="주방가전">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

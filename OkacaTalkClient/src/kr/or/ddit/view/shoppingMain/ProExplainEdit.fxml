@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button fx:id="Shop_Explainchange_Btn" layoutX="110.0" layoutY="200.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" style="-fx-background-color: white; -fx-border-color: black;" text="변경">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="Shop_Explaincancel_Btn" layoutX="220.0" layoutY="200.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" style="-fx-background-color: white; -fx-border-color: black;" text="취소">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <TextField fx:id="Shop_Proexplain_Text" layoutX="45.0" layoutY="70.0" prefHeight="100.0" prefWidth="310.0" />
+   </children>
+</AnchorPane>

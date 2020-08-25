@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="myPageLabel" prefHeight="160.0" prefWidth="780.0" style="-fx-border-color: none; -fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.shoppingMain.MyPage.MyPageCategoryController">
+   <children>
+      <Button fx:id="My_Order_History_Btn" layoutX="45.0" layoutY="23.0" mnemonicParsing="false" onAction="#MyOrderHistoryBtnOnAction" style="-fx-border-color: none; -fx-background-color: white;">
+         <font>
+            <Font size="25.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../image/orderlist.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="Interest_Prod_Btn" layoutX="230.0" layoutY="23.0" mnemonicParsing="false" onAction="#InterestProdBtnOnAction" style="-fx-border-color: none; -fx-background-color: white;">
+         <font>
+            <Font size="25.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../image/interest.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="Charging_Cash_Btn" layoutX="415.0" layoutY="25.0" mnemonicParsing="false" onAction="#chargingCashBtnOnAction" style="-fx-border-color: none; -fx-background-color: white;">
+         <font>
+            <Font size="25.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../image/cashcharge.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="My_Review_Btn" layoutX="600.0" layoutY="23.0" mnemonicParsing="false" onAction="#MyReviewBtnOnAction" style="-fx-border-color: none; -fx-background-color: white;">
+         <font>
+            <Font size="25.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../image/myreview.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="My_Shopping_Cart_Btn" layoutX="45.0" layoutY="89.0" mnemonicParsing="false" onAction="#MyShoppingCartBtnOnAction" style="-fx-border-color: none; -fx-background-color: white;">
+         <font>
+            <Font size="25.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../image/shoppingcart.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="My_Mileage_Btn" layoutX="230.0" layoutY="88.0" mnemonicParsing="false" onAction="#myMileageBtnOnAction" style="-fx-border-color: none; -fx-background-color: white;">
+         <font>
+            <Font size="25.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../image/mileage.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="My_Profile_Btn" layoutX="415.0" layoutY="88.0" mnemonicParsing="false" onAction="#myProfileBtnOnAction" style="-fx-border-color: none; -fx-background-color: white;">
+         <font>
+            <Font size="25.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../image/userinfo.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="My_Question_Btn" layoutX="600.0" layoutY="85.0" mnemonicParsing="false" onAction="#myQuestionBtnOnAction" style="-fx-border-color: none; -fx-background-color: white;">
+         <font>
+            <Font size="25.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../image/qnaword.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

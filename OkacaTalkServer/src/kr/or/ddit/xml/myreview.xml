@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+			PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+			"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<!-- namespace속성 : 아래에작성한 SQL을 호출할때 같이 사용된다. -->
+<sqlMap namespace = "review">
+	<insert id="insertmyreview" parameterClass="reviewVO">
+		INSERT INTO review VALUES
+		(RV_INDEX_SEQ.NEXTVAL, #pl_index#, #mem_mail#, #rv_title#, SYSDATE, #rv_content#, #rv_report#, #rv_rc#)
+	</insert>
+	
+	<select id="getmyreview" parameterClass="String" resultClass="myreviewVO">
+		SELECT r.rv_index, p.pl_index, p.pl_name, p.pl_price, p.pl_image, r.rv_content, r.rv_report, r.rv_rc
+		FROM ProductList p, review r
+		WHERE p.pl_index = r.pl_index
+		  AND r.mem_mail =#mem_mail#
+	</select>
+	
+	<update id="updatemyreview" >
+		UPDATE review SET rv_content = #rv_content#
+		WHERE rv_index = #rv_index#
+	</update>
+	
+	<delete id="deletemyreview" parameterClass="int">
+		DELETE FROM review
+		WHERE rv_index = #rv_index#
+	</delete>
+</sqlMap>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="myPageDetail" prefHeight="760.0" prefWidth="990.0" style="-fx-background-color: white; -fx-border-color: none;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.shoppingMain.MyPage.MyPageMainController">
+   <children>
+      <TableView fx:id="Mypage_Order_Table" layoutX="60.0" layoutY="115.0" prefHeight="585.0" prefWidth="870.0">
+         <columns>
+            <TableColumn fx:id="Order_Index_Col" prefWidth="137.0" text="주문 내역 인덱스" />
+            <TableColumn fx:id="Order_Date_Col" prefWidth="148.3333282470703" text="주문일" />
+            <TableColumn fx:id="Order_Name_Col" prefWidth="449.0" text="주문 목록" />
+            <TableColumn fx:id="Order_Price_Col" prefWidth="140.0" text="주문 금액" />
+         </columns>
+      </TableView>
+      <ImageView fitHeight="100.0" fitWidth="150.0" layoutX="420.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../image/orderlist.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

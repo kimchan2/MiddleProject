@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane prefHeight="760.0" prefWidth="990.0" style="-fx-border-color: lightblue; -fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutX="95.0" layoutY="120.0" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: white; -fx-border-color: lightgray;">
+         <children>
+            <AnchorPane layoutX="30.0" layoutY="50.0" prefHeight="180.0" prefWidth="740.0">
+               <children>
+                  <CheckBox fx:id="Product_Select_Check" alignment="CENTER" contentDisplay="CENTER" layoutX="30.0" layoutY="75.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </CheckBox>
+                  <ImageView fx:id="Product_Img" fitHeight="150.0" fitWidth="200.0" layoutX="65.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label fx:id="Product_Name_Label" alignment="CENTER" layoutX="275.0" layoutY="20.0" prefHeight="65.0" prefWidth="280.0" text="제품 이름" wrapText="true">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Product_Price_Label" alignment="CENTER" layoutX="275.0" layoutY="95.0" prefHeight="65.0" prefWidth="280.0" text="제품 가격" wrapText="true">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="Product_Plus_Btn" layoutX="560.0" layoutY="55.0" mnemonicParsing="false" style="-fx-background-color: white;" text="+" />
+                  <TextFlow fx:id="Product_Quantity_Text" layoutX="585.0" layoutY="58.0" prefHeight="20.0" prefWidth="25.0" style="-fx-background-color: white; -fx-border-color: lightgray;" />
+                  <Button fx:id="Product_Minus_Btn" layoutX="610.0" layoutY="55.0" mnemonicParsing="false" style="-fx-background-color: white;" text="-" />
+                  <Label fx:id="Product_SumPrice_Label" layoutX="562.0" layoutY="95.0" prefHeight="25.0" prefWidth="70.0" text="111111">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="Product_Cartdelete_Btn" layoutX="650.0" layoutY="57.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="65.0" style="-fx-background-color: white; -fx-border-color: gray;" text="삭제" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <Button fx:id="Product_Selectdelete_Btn" layoutX="495.0" layoutY="10.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="140.0" style="-fx-background-color: white; -fx-border-color: gray;" text="선택제품 삭제" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="Product_Buy_Btn" layoutX="645.0" layoutY="10.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: gray;" text="구매하기" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Label layoutX="445.0" layoutY="50.0" text="장바구니">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

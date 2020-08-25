@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: white; -fx-border-color: gray;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.shoppingMain.friendList.ProfileController">
+   <children>
+      <ImageView fx:id="Profile_Background_Img" fitHeight="500.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="Profile_Forward_Img" fitHeight="90.0" fitWidth="90.0" layoutX="164.0" layoutY="340.0" onMouseClicked="#ProfileForwardImgOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../image/기본프로필.png" />
+         </image></ImageView>
+      <Text fx:id="Profile_Nick_Text" layoutX="175.0" layoutY="455.0" strokeType="OUTSIDE" strokeWidth="0.0" text="닉네임" textAlignment="CENTER" textOrigin="CENTER">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <TextFlow fx:id="Profile_Message_Text" layoutX="105.0" layoutY="445.0" prefHeight="50.0" prefWidth="200.0" />
+      <Line endX="300.0" layoutX="100.0" layoutY="500.0" startX="-100.0" />
+      <Button fx:id="Profile_SelfChat" layoutX="90.0" layoutY="530.0" mnemonicParsing="false" onMouseClicked="#ProfileSelfChatOnMouseClicked" prefWidth="105.0" style="-fx-background-color: white; -fx-border-color: gray;" text="나와의 채팅" />
+      <ImageView fx:id="profile_Close_Btn" fitHeight="35.0" fitWidth="36.0" layoutX="350.0" layoutY="14.0" onMouseClicked="#profileCloseBtnOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../image/닫기.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="Profile_Setting_Btn" layoutX="210.0" layoutY="530.0" mnemonicParsing="false" onMouseClicked="#ProfileSettingBtnOnMouseClicked" prefWidth="105.0" style="-fx-background-color: white; -fx-border-color: gray;" text="프로필 관리" />
+      <Button fx:id="Profile_Chat" layoutX="114.0" layoutY="530.0" mnemonicParsing="false" onMouseClicked="#ProfileChatOnMouseClicked" prefHeight="25.0" prefWidth="82.0" style="-fx-background-color: white; -fx-border-color: orange;" text="채팅하기" visible="false" />
+      <Label fx:id="lblMessage" layoutX="19.0" layoutY="200.0" prefHeight="78.0" prefWidth="363.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

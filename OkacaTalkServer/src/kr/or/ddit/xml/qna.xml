@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+			PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+			"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+			
+<sqlMap namespace="qna">
+
+	<insert id="insertQnAVO" parameterClass="qnaVO">
+		
+		INSERT INTO qna VALUES(
+			qa_index_seq.NEXTVAL,
+			#mem_mail#,
+			#qa_title#,
+			SYSDATE,
+			#qa_content#
+		)
+		<selectKey resultClass="int">
+			SELECT qa_index_seq.CURRVAL
+			FROM dual
+		</selectKey>
+	</insert>
+	
+	<select id="getQnaVO" parameterClass="map" resultClass="qnaVO">
+	
+		SELECT qa_index, mem_mail, qa_title, qa_date, qa_content
+		FROM
+		    (SELECT ROWNUM rn, qa_index, mem_mail, qa_title, TO_CHAR(qa_date, 'MM/DD') as qa_date, qa_content
+		    FROM
+		        (SELECT *
+		        FROM qna
+		        WHERE mem_mail = #mem_mail#
+		        ORDER BY qa_date DESC) a ) b
+		WHERE rn <![CDATA[ <= ]]> #page#*2 AND rn <![CDATA[ >= ]]> #page#*2 - 1
+	
+	</select>
+	
+	<select id="getQnaVOAll" parameterClass="int" resultClass="qnaVO">
+		
+		SELECT qa_index, mem_mail, qa_title, qa_date, qa_content
+		FROM
+		    (SELECT ROWNUM rn, qa_index, mem_mail, qa_title, TO_CHAR(qa_date, 'MM/DD') as qa_date, qa_content
+		    FROM
+		        (SELECT *
+		        FROM qna
+		        ORDER BY qa_date DESC) a ) b
+		WHERE rn <![CDATA[ <= ]]> #page#*2 AND rn <![CDATA[ >= ]]> #page#*2 - 1
+		
+	</select>
+	
+	<select id="pageCount" parameterClass="String" resultClass="int">
+		
+		SELECT TRUNC((COUNT(*)-1)/2) + 1
+		FROM qna
+		WHERE mem_mail = #mem_mail#
+		
+	</select>
+	<select id="adminPageCount" resultClass="int">
+	
+		SELECT TRUNC((COUNT(*)-1)/2) + 1
+		FROM qna
+	
+	</select>
+	
+	<update id="updateQnAVO" parameterClass="qnaVO">
+	
+		UPDATE qna SET qa_index = #qa_index#,
+					   mem_mail = #mem_mail#,
+					   qa_title = #qa_title#,
+					   qa_date = SYSDATE,
+					   qa_content = #qa_content#
+		WHERE qa_index = #qa_index#
+		
+	</update>
+	
+	<delete id="deleteQnAVO" parameterClass="int">
+		{call
+			DECLARE
+				at_cnt NUMBER;
+				qna_cnt NUMBER;
+			BEGIN
+				DELETE attachment
+				WHERE qa_index = #qa_index#;
+				
+				SELECT COUNT(*) into at_cnt
+				FROM attachment
+				WHERE qa_index = #qa_index#;
+				
+				DELETE qnacmt
+				WHERE qa_index = #qa_index#;
+				
+				SELECT COUNT(*) into qna_cnt
+				FROM qnacmt
+				WHERE qa_index = #qa_index#;
+				commit;
+				IF (at_cnt = 0 AND qna_cnt = 0 ) THEN
+					BEGIN
+						DELETE qna WHERE qa_index = #qa_index#;
+						commit;
+					END;
+				END IF;
+				
+			END
+		}
+	</delete>
+</sqlMap>			

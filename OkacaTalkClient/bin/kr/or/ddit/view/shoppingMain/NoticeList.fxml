@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="NoticeMain" prefHeight="950.0" prefWidth="400.0" style="-fx-border-color: gray;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="25.0" layoutY="35.0" prefHeight="50.0" prefWidth="165.0" text="공지사항">
+         <font>
+            <Font size="40.0" />
+         </font></Label>
+      <ScrollPane fx:id="NoticeSC" layoutX="30.0" layoutY="130.0" prefHeight="800.0" prefWidth="340.0">
+        <content>
+            <VBox fx:id="NoticeVBox" prefHeight="790.0" prefWidth="340.0" />
+        </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

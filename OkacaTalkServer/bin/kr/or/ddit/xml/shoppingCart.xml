@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+			PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+			"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<!-- namespace속성 : 아래에작성한 SQL을 호출할때 같이 사용된다. -->
+<sqlMap namespace="shoppingCart">
+<!-- 	<select> -->
+<!-- 	</select> -->
+	<insert id="insertshoppingcartlist" parameterClass="cartVO">
+		INSERT INTO ShoppingCart VALUES(SC_INDEX_SEQ.NEXTVAL, #pl_index#, #mem_mail#, #sc_quantity#)
+	</insert>
+	
+	<select id="getShoppingCartVO" parameterClass="String" resultClass="cartVO">
+	select * 
+	from shoppingcart
+	where Mem_mail = #mem_mail#
+	</select>
+	
+	<select id="SelectShoppingCartVO" parameterClass="int" resultClass="cartVO">
+	select * 
+	from shoppingcart
+	where sc_index = #sc_index#
+	</select>
+	
+	
+	<delete id="deleteShoppingCartVO" parameterClass="int">
+		
+	delete from shoppingcart 
+	where sc_index = #sc_index#
+		
+	</delete>
+
+</sqlMap>

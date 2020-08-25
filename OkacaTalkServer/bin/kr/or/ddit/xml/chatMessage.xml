@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+			PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+			"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+			
+<sqlMap namespace="chatMessage">
+
+	<select id="getChatMessageByCrIndex" parameterClass="int" resultClass="cmVO">
+		SELECT * FROM ChatMessage
+		WHERE cr_index = #cr_index#
+		ORDER BY cm_time ASC
+	</select>
+	
+	<select id="getChatMessageByCrIndexRecent50" parameterClass="map" resultClass="cmVO">
+		SELECT *
+		FROM
+		    (SELECT ROWNUM rn, a.*
+		     FROM
+		        (SELECT *
+		         FROM chatMessage
+		         WHERE cr_index = #cr_index#
+		         ORDER BY cm_index ) a ) b
+		WHERE b.rn <![CDATA[ >= ]]> (SELECT MAX(ROWNUM) FROM chatMessage WHERE cr_index = #cr_index#) - (#page#)*50+1 
+		AND b.rn <![CDATA[ <= ]]> (SELECT MAX(ROWNUM) FROM chatMessage WHERE cr_index = #cr_index#) - 50 * (#page#-1)
+	</select>
+	
+	<insert id="insertChatMessageInCrIndex" parameterClass="cmVO">
+		INSERT INTO ChatMessage VALUES (
+			cm_index_seq.NEXTVAL,
+			#mem_mail#,
+			#cr_index#,
+			#cm_content#,
+			SYSDATE,
+			#cm_ischeck#)
+			
+			<selectKey>
+				SELECT cm_index_seq.CURRVAL
+				FROM dual
+			</selectKey>
+	</insert>
+	
+	<update id="updateChatMessage">
+		UPDATE ChatMessage SET cm_ischeck = 
+			(SELECT cm_ischeck 
+			 FROM ChatMessage 
+			 WHERE cm_index = #cm_index#) || , || #mem_mail#
+		WHERE cm_index = #cm_index#
+	</update>
+</sqlMap>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="760.0" prefWidth="990.0" style="-fx-border-color: lightblue; -fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.shoppingMain.payment.ProductPaymentController">
+   <children>
+      <AnchorPane layoutX="70.0" layoutY="140.0" prefHeight="545.0" prefWidth="840.0" style="-fx-background-color: none; -fx-border-color: gray;" />
+      <ImageView fx:id="Shop_Product_Img" fitHeight="450.0" fitWidth="450.0" layoutX="90.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="Shop_Back_Btn" layoutX="70.0" layoutY="70.0" mnemonicParsing="false" onAction="#ShopBackBtnOnAction" style="-fx-background-color: white;" text="뒤로가기">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <AnchorPane layoutX="555.0" layoutY="170.0" prefHeight="490.0" prefWidth="330.0" style="-fx-background-color: white; -fx-border-color: lightblue;" />
+      <Label fx:id="Product_Name_Label" alignment="CENTER" contentDisplay="CENTER" layoutX="570.0" layoutY="170.0" prefHeight="75.0" prefWidth="300.0" text="상품명" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="Product_Quantity_Label" alignment="CENTER" layoutX="705.0" layoutY="255.0" prefWidth="180.0" text="수량" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="Product_Price_Label" alignment="CENTER" layoutX="705.0" layoutY="290.0" prefHeight="25.0" prefWidth="180.0" text="개당 상품 가격" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="Product_Sumprice_Label" alignment="CENTER" layoutX="705.0" layoutY="325.0" prefWidth="180.0" text="총 상품 가격" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="Product_Mileage_Label" alignment="CENTER" layoutX="705.0" layoutY="380.0" prefWidth="180.0" text="보유 마일리지" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="Product_UsingMileage_Text" alignment="CENTER" layoutX="740.0" layoutY="410.0" prefHeight="35.0" prefWidth="60.0" style="-fx-background-color: white; -fx-border-color: lightgray;" text="0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Label fx:id="Product_Remainmileage_Label" alignment="CENTER" layoutX="705.0" layoutY="450.0" prefHeight="25.0" prefWidth="180.0" text="사용 후 남는 마일리지 잔액" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="Product_Savingmileage_Label" alignment="CENTER" layoutX="705.0" layoutY="485.0" prefWidth="180.0" text="적립 예정 마일리지" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="Product_Havingcash_Label" alignment="CENTER" layoutX="705.0" layoutY="540.0" prefWidth="180.0" text="보유 캐시" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="Product_Remaincash_Label" alignment="CENTER" layoutX="705.0" layoutY="575.0" prefWidth="180.0" text="결제 후 캐시" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="Mileage_Using_Btn" alignment="CENTER" layoutX="810.0" layoutY="415.0" mnemonicParsing="false" onAction="#MileageUsingBtnOnAction" prefWidth="45.0" style="-fx-background-color: white; -fx-border-color: black;" text="사용" textAlignment="CENTER" />
+      <Button fx:id="Product_Payment_Btn" layoutX="675.0" layoutY="610.0" mnemonicParsing="false" onAction="#ProductPaymentBtnOnAction" style="-fx-background-color: white; -fx-border-color: gray;" text="결제하기">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER" layoutX="615.0" layoutY="255.0" prefHeight="25.0" prefWidth="45.0" text="수량" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="570.0" layoutY="290.0" prefHeight="25.0" prefWidth="135.0" text="개당 상품 가격" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="570.0" layoutY="440.0" prefHeight="50.0" prefWidth="135.0" text="사용 후 남는 마일리지 잔액" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="570.0" layoutY="488.0" prefWidth="135.0" text="적립 예정 마일리지" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="585.0" layoutY="540.0" prefWidth="100.0" text="보유 캐시" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="575.0" layoutY="575.0" prefWidth="120.0" text="결제 후 캐시" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="580.0" layoutY="325.0" prefWidth="115.0" text="총 상품 가격" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="575.0" layoutY="380.0" prefWidth="130.0" text="보유 마일리지" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="565.0" layoutY="415.0" prefWidth="150.0" text="사용할 마일리지" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="80.0" fitWidth="130.0" layoutX="420.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../image/buy.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

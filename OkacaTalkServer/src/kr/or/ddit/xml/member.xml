@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+			PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+			"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<!-- namespace속성 : 아래에작성한 SQL을 호출할때 같이 사용된다. -->
+<sqlMap namespace="member">
+
+	<select id="getFriendList" parameterClass="String" resultClass="memVO">
+	
+		SELECT member.*
+		FROM (SELECT *
+		      FROM friendlist
+		      WHERE mem_mail = #data#) a, member
+		WHERE a.fr_mail = member.mem_mail
+	
+	</select>
+
+	<select id="getBookmarkMember" parameterClass="String" resultClass="memVO">
+	
+		SELECT member.*
+		FROM bookmark, member
+		WHERE 1=1
+		AND bookmark.mem_mail = #data#
+		AND bookmark.fr_mail = member.mem_mail
+	
+	</select>
+
+	<select id="getBirthdayMember" parameterClass="String" resultClass="memVO">
+	
+		SELECT *
+		FROM
+		(SELECT *
+		FROM FriendList
+		WHERE mem_mail = #mem_mail#) a, member m
+		WHERE a.fr_mail = m.mem_mail
+		AND TO_CHAR(m.mem_birth, 'MM/DD') = TO_CHAR(SYSDATE, 'MM/DD')
+	
+	</select>
+	<insert id="insertMember" parameterClass="memVO">
+	
+		INSERT INTO MEMBER
+		VALUES (#mem_mail#, #mem_birth#, #mem_nick#, #mem_pass#,
+				#mem_name#, #mem_hp#, #mem_addr#, 0, 0,
+				'99991231', '')
+							 
+	</insert>
+	
+	<update id="updateMember" parameterClass="memVO">
+	
+		update member 
+		set mem_message = #mem_message#
+		 <isNotEmpty property="mem_nick">
+		, mem_nick = #mem_nick#
+		</isNotEmpty>
+		where mem_mail = #mem_mail#
+	
+	</update>
+	
+		<update id="updatecashMember" parameterClass="memVO">
+	
+		update member 
+		set mem_CASH = #mem_cash#
+		where mem_mail = #mem_mail#
+	
+	</update>
+	
+	<update id="updatecashpointMember" parameterClass="memVO">
+	
+		update member 
+		set mem_CASH = #mem_cash#, 
+			mem_point = #mem_point#
+		where mem_mail = #mem_mail#
+	
+	</update>
+	
+		<update id="updatemodifyMember" parameterClass="memVO">
+	
+		update member 
+		set MEM_PASS = #mem_pass#, MEM_hp = #mem_hp# , MEM_NICK = #mem_nick#,
+            MEM_ADDR = #mem_addr#
+		where mem_mail = #mem_mail#
+	
+	</update>
+	
+	<delete id="deleteMember" parameterClass="String">
+	
+	{call
+		BEGIN
+			UPDATE chatmessage SET mem_mail = null WHERE mem_mail = #mem_mail#;
+			UPDATE chatroom SET mem_mail = 9999 WHERE mem_mail = #mem_mail#;
+			DELETE from participant WHERE mem_mail = #mem_mail#;
+			DELETE from noticecmt WHERE mem_mail = #mem_mail#;
+			DELETE from friendlist WHERE fr_mail = #mem_mail#;
+			DELETE from friendlist WHERE mem_mail = #mem_mail#;
+			DELETE from bookmark WHERE fr_mail = #mem_mail#;
+			DELETE from bookmark WHERE mem_mail = #mem_mail#;
+			DELETE from participant WHERE mem_mail = #mem_mail#;
+<!-- 			DELETE from chatmessage WHERE mem_mail = #mem_mail#; -->
+<!-- 			DELETE from chatroom WHERE mem_mail = #mem_mail#; -->
+			DELETE from hidefriend WHERE mem_mail = #mem_mail#;
+			DELETE from blockfriend WHERE mem_mail = #mem_mail#;
+			DELETE from usingpoint WHERE mem_mail = #mem_mail#;
+			DELETE from qnacmt WHERE mem_mail = 'admin';
+			DELETE from qna WHERE mem_mail = #mem_mail#;
+			DELETE from inquire WHERE mem_mail = #mem_mail#;
+			DELETE from reviewcmt WHERE mem_mail = #mem_mail#;
+			DELETE from review WHERE mem_mail = #mem_mail#;
+			DELETE from profileimglist WHERE mem_mail = #mem_mail#;
+			DELETE from backgroundimglist WHERE mem_mail = #mem_mail#;
+			DELETE from savepoint WHERE mem_mail = #mem_mail#;
+			DELETE from usingcash WHERE mem_mail = #mem_mail#;
+			DELETE from chargecash WHERE mem_mail = #mem_mail#;
+			DELETE from shoppingcart WHERE mem_mail = #mem_mail#;
+			
+			DELETE OrderDetail
+			WHERE EXISTS(
+				SELECT OrderDetail.o_index
+				FROM OrderList, OrderDetail
+				WHERE OrderList.mem_mail = #mem_mail# AND OrderList.o_index = OrderDetail.o_index 
+			);
+			
+			DELETE from orderlist WHERE mem_mail = #mem_mail#;
+			DELETE from favoritelist WHERE mem_mail = #mem_mail#;
+			DELETE from configuration WHERE mem_mail = #mem_mail#;
+			delete from member where mem_mail = #mem_mail#;
+		END
+	}
+		
+	</delete>
+	 
+	<select id="getMemberAll" resultClass="memVO">
+	
+		select * from member
+	
+	</select>
+	<select id="getMember" parameterClass="memVO" resultClass="memVO">
+	
+		SELECT * FROM MEMBER
+		WHERE 1=1
+		AND MEM_MAIL = #mem_mail#
+		AND MEM_PASS = #mem_pass#
+	
+	</select>
+	
+	<select id="getNickByEmail" parameterClass="String" resultClass="String">
+	
+		SELECT mem_nick
+		FROM MEMBER
+		WHERE mem_mail = #mem_mail#
+	
+	</select>
+	
+	<select id="getSearchId" parameterClass="String" resultClass="memVO">
+	
+		SELECT * FROM MEMBER
+		WHERE 1=1
+		AND MEM_MAIL = #mem_mail#
+	
+	</select>
+	
+	
+	<select id="nickSearch" parameterClass="memVO" resultClass="memVO">
+	
+		SELECT * FROM MEMBER
+		WHERE 1=1
+		AND MEM_NICK = #mem_nick#
+	</select>
+	
+		<select id="getSearchPW" parameterClass="memVO" resultClass="memVO">
+	
+		SELECT * FROM MEMBER
+		WHERE 1=1
+		AND MEM_MAIL = #mem_mail#
+		AND MEM_name = #mem_name#
+	
+	</select>
+	
+	<select id="getSearchId2" parameterClass="memVO" resultClass="memVO">
+	
+		SELECT * FROM MEMBER
+		WHERE 1=1
+		AND MEM_NAME = #mem_name#
+		AND MEM_HP = #mem_hp#
+	
+	</select>
+	
+	
+	<select id="getSearchMember" parameterClass="memVO" resultClass="memVO">
+	
+		SELECT * FROM member 
+		WHERE 1=1 
+<!-- 		<isNotEmpty property="mem_mail"> -->
+<!-- 			AND mem_mail = #mem_mail# -->
+<!-- 		</isNotEmpty> -->
+<!-- 		<isNotEmpty property="mem_name"> -->
+<!-- 			AND mem_name = #mem_name# -->
+<!-- 		</isNotEmpty> -->
+<!-- 		<isNotEmpty property="mem_tel"> -->
+<!-- 			AND mem_hp = #mem_hp# -->
+<!-- 		</isNotEmpty> -->
+<!-- 		<isNotEmpty property="mem_addr"> -->
+<!-- 			AND mem_addr like '%' || #mem_addr# || '%'  -->
+<!-- 		</isNotEmpty> -->
+	
+	</select>
+
+</sqlMap>
+
+
+
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="mail-1.4.7.jar"/>
+	<classpathentry kind="lib" path="commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="local_policy.jar"/>
+	<classpathentry kind="lib" path="US_export_policy.jar"/>
+	<classpathentry kind="lib" path="smtp.jar"/>
+	<classpathentry kind="lib" path="jfoenix-8.0.8.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

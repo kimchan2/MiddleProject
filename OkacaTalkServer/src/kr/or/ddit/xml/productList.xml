@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+			PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+			"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<!-- namespace속성 : 아래에작성한 SQL을 호출할때 같이 사용된다. -->
+
+<sqlMap namespace="ProductList">
+	<select id="getcategory" resultClass="int">
+		SELECT COUNT(cl_index)
+		FROM CategoryList
+	</select>
+	
+	<select id="getdetailproduct" parameterClass="String" resultClass="prodVO">
+		SELECT *
+		FROM ProductList
+		WHERE pl_image = #pl_image#
+	</select>
+	
+	<select id="getcategorynumber" parameterClass="int" resultClass="cateVO">
+		SELECT cl_category, cl_detail_category
+		FROM CategoryList
+		WHERE cl_index = #cl_index#
+	</select>
+	
+	<select id="getproductlist" parameterClass="int" resultClass="prodVO">
+		SELECT *
+		FROM ProductList
+		WHERE cl_index = #cl_index#
+	</select>
+	
+	<!-- 상품 정렬 -->
+	<select id="highpricesortlist" parameterClass="int" resultClass="prodVO">
+		SELECT pl_name, pl_price, pl_image
+		FROM ProductList
+		WHERE cl_index = #cl_index#
+		ORDER BY pl_price DESC
+	</select>
+	
+	<select id="lowpricesortlist" parameterClass="int" resultClass="prodVO">
+		SELECT pl_name, pl_price, pl_image
+		FROM ProductList
+		WHERE cl_index = #cl_index#
+		ORDER BY pl_price
+	</select>
+	
+	<select id="popularitysortlist" parameterClass="int" resultClass="prodVO">
+		SELECT pl_name, pl_price, pl_image
+		FROM ProductList
+		WHERE cl_index = #cl_index#
+		ORDER BY pl_stock
+	</select>
+	
+	
+	<select id="namesortlist" parameterClass="int" resultClass="prodVO">
+		SELECT pl_name, pl_price, pl_image
+		FROM ProductList
+		WHERE cl_index = #cl_index#
+		ORDER BY pl_name
+	</select>
+	
+	<select id="latestsortlist" parameterClass="int" resultClass="prodVO">
+		SELECT pl_name, pl_price, pl_image
+		FROM ProductList
+		WHERE cl_index = #cl_index#
+		ORDER BY pl_date DESC
+	</select>
+	
+	<select id="reviewsortlist" parameterClass="int" resultClass="prodVO">
+		SELECT pl_name, pl_price, pl_image
+		FROM ProductList p, 
+		 (SELECT ROWNUM rn, rv.*
+		  FROM 
+		  (SELECT pl_index, COUNT(pl_index) cnt
+		   FROM review
+		   GROUP BY pl_index
+		   ORDER BY cnt DESC) rv) a
+		WHERE p.pl_index = a.pl_index
+		  AND cl_index = #cl_index#
+		ORDER BY cnt
+	</select>
+	
+		<select id="getdetailproduct2" parameterClass="int" resultClass="prodVO">
+		SELECT *
+		FROM ProductList
+		WHERE pl_index = #pl_index#
+	</select>
+	
+	<update id= "updateproduct" parameterClass="prodVO">
+	UPDATE productlist SET pl_stock = #pl_stock#,
+ 	pl_sales = #pl_sales#
+ 	WHERE pl_index = #pl_index#
+	
+	</update> 
+	
+	<!-- page 개수 -->
+	<select id="pageCount" parameterClass="int" resultClass="int">
+		SELECT TRUNC((COUNT(*)-1)/2) + 1
+		FROM ProductList
+		WHERE cl_index = #cl_index#
+	</select>
+	
+	<!-- paging 처리 (admin) -->
+	<select id="getProductVOAll" parameterClass="int" resultClass="prodVO">
+		SELECT *
+		FROM
+		(SELECT ROWNUM rn, a.*
+		 FROM
+		 (SELECT *
+		  FROM ProductList
+		  WHERE cl_index = #cl_index#
+		  ORDER BY pl_index) a) b
+		  WHERE rn <![CDATA[ >= ]]> (:page-1)*8 + 1 AND rn <![CDATA[ <= ]]> :page * 8
+	</select>
+	
+	<!-- paging 처리 -->
+	<select id="getProductVO" parameterClass="map" resultClass="prodVO">
+		SELECT *
+		FROM
+		(SELECT ROWNUM rn, a.*
+		 FROM
+		 (SELECT *
+		  FROM ProductList
+		  WHERE cl_index = #cl_index#
+		  ORDER BY pl_index) a) b
+		  WHERE rn <![CDATA[ >= ]]> (#page#-1)*8 + 1 AND rn <![CDATA[ <= ]]> #page# * 8
+	</select>
+</sqlMap>

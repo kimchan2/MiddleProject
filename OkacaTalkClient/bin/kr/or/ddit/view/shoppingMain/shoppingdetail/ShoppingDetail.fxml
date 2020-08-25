@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="detailMain" prefHeight="760.0" prefWidth="990.0" style="-fx-background-color: white; -fx-border-color: none;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.shoppingMain.shoppingdetail.ShoppingDetailController">
+   <children>
+      <Label fx:id="Cate_Title_Label" alignment="CENTER" layoutX="40.0" layoutY="35.0" prefHeight="50.0" prefWidth="180.0" style="-fx-border-color: none;" text="카테고리">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="260.0" layoutY="65.0" prefHeight="25.0" prefWidth="30.0" text="검색">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="Product_Search_Text" layoutX="315.0" layoutY="65.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <Button fx:id="Product_Highpricesort_Btn" layoutX="535.0" layoutY="55.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" style="-fx-background-color: white;" text=" 높은 가격순" textAlignment="CENTER" wrapText="true" />
+      <Button fx:id="Product_Lowpricesort_Btn" layoutX="600.0" layoutY="55.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" style="-fx-background-color: white;" text=" 낮은 가격순" textAlignment="CENTER" wrapText="true" />
+      <Button fx:id="Product_Latestsort_Btn" layoutX="738.0" layoutY="60.0" mnemonicParsing="false" prefHeight="30.0" style="-fx-background-color: white;" text="최신순">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="Product_Popularitysort_Btn" layoutX="665.0" layoutY="60.0" mnemonicParsing="false" prefHeight="30.0" style="-fx-background-color: white;" text="인기순">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <AnchorPane layoutX="20.0" layoutY="130.0" prefHeight="520.0" prefWidth="950.0" style="-fx-background-color: none; -fx-border-color: none;">
+         <children>
+            <ImageView fx:id="Product_Img1" fitHeight="150.0" fitWidth="150.0" layoutX="30.0" layoutY="15.0" onMouseClicked="#productImg1OnMouseClicked" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="Product_Name_Label1" alignment="CENTER" layoutX="5.0" layoutY="180.0" prefHeight="50.0" prefWidth="200.0" style="-fx-border-color: none;" text="이름" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="Product_Price_Label1" alignment="CENTER" layoutX="30.0" layoutY="230.0" prefHeight="25.0" prefWidth="150.0" style="-fx-border-color: none;" text="가격" textAlignment="CENTER">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="Product_Img2" fitHeight="150.0" fitWidth="150.0" layoutX="270.0" layoutY="15.0" onMouseClicked="#productImg2OnMouseClicked" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="Product_Name_Label2" alignment="CENTER" layoutX="245.0" layoutY="180.0" prefHeight="50.0" prefWidth="200.0" style="-fx-border-color: none;" text="이름" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="Product_Price_Label2" alignment="CENTER" layoutX="270.0" layoutY="230.0" prefHeight="25.0" prefWidth="150.0" style="-fx-border-color: none;" text="가격" textAlignment="CENTER">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="Product_Img3" fitHeight="150.0" fitWidth="150.0" layoutX="510.0" layoutY="15.0" onMouseClicked="#productImg3OnMouseClicked" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="Product_Name_Label3" alignment="CENTER" layoutX="485.0" layoutY="180.0" prefHeight="50.0" prefWidth="200.0" style="-fx-border-color: none;" text="이름" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="Product_Price_Label3" alignment="CENTER" layoutX="510.0" layoutY="230.0" prefHeight="25.0" prefWidth="150.0" style="-fx-border-color: none;" text="가격" textAlignment="CENTER">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="Product_Img4" fitHeight="150.0" fitWidth="150.0" layoutX="750.0" layoutY="15.0" onMouseClicked="#productImg4OnMouseClicked" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="Product_Name_Label4" alignment="CENTER" layoutX="725.0" layoutY="180.0" prefHeight="50.0" prefWidth="200.0" style="-fx-border-color: none;" text="이름" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="Product_Price_Label4" alignment="CENTER" layoutX="750.0" layoutY="230.0" prefHeight="25.0" prefWidth="150.0" style="-fx-border-color: none;" text="가격" textAlignment="CENTER">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="Product_Img5" fitHeight="150.0" fitWidth="150.0" layoutX="30.0" layoutY="270.0" onMouseClicked="#productImg5OnMouseClicked" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="Product_Name_Label5" alignment="CENTER" layoutX="5.0" layoutY="435.0" prefHeight="50.0" prefWidth="200.0" style="-fx-border-color: none;" text="이름" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="Product_Price_Label5" alignment="CENTER" layoutX="30.0" layoutY="485.0" prefHeight="25.0" prefWidth="150.0" style="-fx-border-color: none;" text="가격" textAlignment="CENTER">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="Product_Img6" fitHeight="150.0" fitWidth="150.0" layoutX="270.0" layoutY="270.0" onMouseClicked="#productImg6OnMouseClicked" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="Product_Name_Label6" alignment="CENTER" layoutX="245.0" layoutY="435.0" prefHeight="50.0" prefWidth="200.0" style="-fx-border-color: none;" text="이름" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="Product_Price_Label6" alignment="CENTER" layoutX="270.0" layoutY="485.0" prefHeight="25.0" prefWidth="150.0" style="-fx-border-color: none;" text="가격" textAlignment="CENTER">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="Product_Img7" fitHeight="150.0" fitWidth="150.0" layoutX="510.0" layoutY="270.0" onMouseClicked="#productImg7OnMouseClicked" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="Product_Name_Label7" alignment="CENTER" layoutX="485.0" layoutY="435.0" prefHeight="50.0" prefWidth="200.0" style="-fx-border-color: none;" text="이름" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="Product_Price_Label7" alignment="CENTER" layoutX="510.0" layoutY="485.0" prefHeight="25.0" prefWidth="150.0" style="-fx-border-color: none;" text="가격" textAlignment="CENTER">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="Product_Img8" fitHeight="150.0" fitWidth="150.0" layoutX="750.0" layoutY="270.0" onMouseClicked="#productImg8OnMouseClicked" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="Product_Name_Label8" alignment="CENTER" layoutX="725.0" layoutY="435.0" prefHeight="50.0" prefWidth="200.0" style="-fx-border-color: none;" text="이름" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="Product_Price_Label8" alignment="CENTER" layoutX="750.0" layoutY="485.0" prefHeight="25.0" prefWidth="150.0" style="-fx-border-color: none;" text="가격" textAlignment="CENTER">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="20.0" layoutY="650.0" prefHeight="70.0" prefWidth="950.0">
+         <children>
+            <Label layoutX="20.0" layoutY="20.0" prefHeight="30.0" prefWidth="150.0">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="180.0" layoutY="5.0" prefHeight="60.0" prefWidth="130.0">
+               <children>
+                  <Label fx:id="Product_LatestPrice_Label" layoutX="75.0" layoutY="15.0" prefHeight="30.0" prefWidth="40.0">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="Product_Latest_Img" fitHeight="50.0" fitWidth="50.0" layoutX="15.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <Label fx:id="Dcate_Title_Label" alignment="CENTER" layoutX="40.0" layoutY="90.0" onMouseClicked="#dcateTitleLabelOnMouseClicked" prefHeight="25.0" prefWidth="180.0" style="-fx-border-color: none;" text="세부 카테고리" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Pagination fx:id="Prod_Pagination_Btn" layoutX="320.0" layoutY="700.0" prefHeight="45.0" prefWidth="348.0" />
+   </children>
+</AnchorPane>

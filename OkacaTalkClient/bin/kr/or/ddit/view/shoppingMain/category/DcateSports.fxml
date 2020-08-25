@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="Shop_Dcate" prefHeight="80.0" prefWidth="780.0" style="-fx-border-color: none; -fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.shoppingMain.category.DcateSportsController">
+   <children>
+      <Button fx:id="Shop_SportsCloth_Btn" layoutX="80.0" layoutY="5.0" mnemonicParsing="false" onAction="#ShopSportsClothBtnOnAction" prefHeight="70.0" prefWidth="140.0" style="-fx-border-color: white; -fx-background-color: none;" text="스포츠 의류 운동화" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="Shop_Fitness_Btn" layoutX="220.0" layoutY="5.0" mnemonicParsing="false" onAction="#ShopFitnessBtnOnAction" prefHeight="70.0" prefWidth="110.0" style="-fx-border-color: white; -fx-background-color: none;" text="휘트니스 수영" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="Shop_Ball_Btn" layoutX="330.0" layoutY="5.0" mnemonicParsing="false" onAction="#ShopBallBtnOnAction" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: white; -fx-background-color: none;" text="구기라켓" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="Shop_Golf_Btn" layoutX="400.0" layoutY="15.0" mnemonicParsing="false" onAction="#ShopGolfBtnOnAction" prefHeight="50.0" prefWidth="70.0" style="-fx-border-color: white; -fx-background-color: none;" text="골프" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="Shop_Leisure_Btn" layoutX="470.0" layoutY="5.0" mnemonicParsing="false" onAction="#ShopLeisureBtnOnAction" prefHeight="70.0" prefWidth="140.0" style="-fx-border-color: white; -fx-background-color: none;" text="자전거 보드 기타레저" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="Shop_Camping_Btn" layoutX="610.0" layoutY="5.0" mnemonicParsing="false" onAction="#ShopCampingBtnOnAction" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: white; -fx-background-color: none;" text="캠핑낚시" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

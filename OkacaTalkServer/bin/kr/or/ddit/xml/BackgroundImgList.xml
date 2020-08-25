@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+			PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+			"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<!-- namespace속성 : 아래에작성한 SQL을 호출할때 같이 사용된다. -->
+<sqlMap namespace="BackgroundImgList">
+	<select id="getBackgroundImg" parameterClass="String" resultClass="bilVO">
+		SELECT *
+		FROM
+		(SELECT *
+		FROM BackgroundImgList
+		ORDER BY bg_date DESC)
+		WHERE 1=1 
+		AND ROWNUM <![CDATA[ <= ]]> 1
+		AND mem_mail = #mem_mail#
+	</select>
+	
+	<insert id="insertBackgroundImgList" parameterClass="bilVO">
+		INSERT INTO BackgroundImgList VALUES (
+			bg_index_seq.NEXTVAL,
+			#mem_mail#,
+			#bg_addr#,
+			SYSDATE
+		)
+		<selectKey resultClass="int">
+			SELECT bg_index_seq.CURRVAL
+			FROM dual
+		</selectKey>
+	</insert>
+	
+	
+</sqlMap>

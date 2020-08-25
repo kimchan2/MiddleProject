@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+			PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+			"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+			
+<sqlMap namespace="qnaCmt">
+	
+	<select id="selectQnACmtVO" parameterClass="int" resultClass="qnaCmtVO">
+		
+		SELECT *
+        FROM
+        (SELECT *
+        FROM qnacmt
+        WHERE qa_index = #qa_index#
+        ORDER BY qac_index DESC)
+        WHERE ROWNUM <![CDATA[ <= ]]> 1
+	
+	</select>
+	
+	<insert id="insertQnACmtVO" parameterClass="qnaCmtVO">
+		INSERT INTO qnacmt VALUES(
+			qac_index_seq.NEXTVAL,
+			#qa_index#,
+			#mem_mail#,
+			#qac_content#
+		)
+		
+		<selectKey resultClass="int">
+			SELECT qac_index_seq.CURRVAL
+			FROM dual
+		</selectKey>
+	</insert>
+
+</sqlMap>

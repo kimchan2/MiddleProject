@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="950.0" prefWidth="400.0" style="-fx-border-color: gray; -fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.shoppingMain.chatRoom.ChatRoomListController">
+   <children>
+      <TextField fx:id="Chat_Search_Text" alignment="CENTER" layoutX="30.0" layoutY="95.0" onMouseClicked="#chatSearchTextOnMouseClicked" prefHeight="50.0" prefWidth="340.0" style="-fx-background-color: none; -fx-border-color: lightgray;" text="친구 이름, 채팅방 검색">
+         <font>
+            <Font size="17.0" />
+         </font></TextField>
+      <ListView fx:id="Chat_Chatroom_List" layoutX="30.0" layoutY="175.0" onKeyPressed="#chatChatroomListOnKeyPressed" onMouseClicked="#chatChatroomListOnMouseDoubleClicked" prefHeight="740.0" prefWidth="340.0" />
+      <ImageView fx:id="Insert_Chat_Room_Btn" fitHeight="50.0" fitWidth="50.0" layoutX="320.0" layoutY="20.0" onMouseClicked="#insertChatRoomBtnOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../image/새로운%20채팅.png" />
+         </image></ImageView>
+      <ImageView fitHeight="110.0" fitWidth="160.0" layoutX="15.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../image/chatlist.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

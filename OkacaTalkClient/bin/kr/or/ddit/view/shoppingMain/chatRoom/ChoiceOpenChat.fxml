@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="430.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.shoppingMain.chatRoom.ChoiceOpenChatController">
+   <children>
+      <TextField fx:id="Search_OpenChat_Text" layoutX="35.0" layoutY="75.0" onMouseClicked="#searchOpenChatTextOnAction" prefHeight="33.0" prefWidth="254.0" style="-fx-background-color: none; -fx-border-color: gray;" text="오픈채팅방 이름 검색">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </TextField>
+      <ImageView fx:id="Search_OpenChat_Btn" fitHeight="45.0" fitWidth="45.0" layoutX="300.0" layoutY="70.0" onMouseClicked="#searchFriendBtnOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../image/검색버튼.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Insert_OpenChat_Room_Btn" fitHeight="45.0" fitWidth="45.0" layoutX="350.0" layoutY="70.0" onMouseClicked="#insertOpenChatRoomBtnOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../image/새로운%20채팅.png" />
+         </image>
+      </ImageView>
+      <ListView fx:id="OpenChat_List" layoutX="35.0" layoutY="120.0" prefHeight="200.0" prefWidth="360.0" />
+      <Button fx:id="Cancel_Btn" layoutX="340.0" layoutY="330.0" mnemonicParsing="false" onAction="#cancelBtnOnAction" prefHeight="30.0" prefWidth="55.0" style="-fx-background-color: none; -fx-border-color: gray;" text="취소" />
+      <Button fx:id="Choice_OpenChat_Btn" layoutX="270.0" layoutY="330.0" mnemonicParsing="false" onAction="#choiceOpenChatBtnOnAction" prefHeight="30.0" prefWidth="55.0" style="-fx-background-color: none; -fx-border-color: gray;" text="확인" />
+      <ImageView fitHeight="100.0" fitWidth="150.0" layoutX="35.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../image/openchat.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

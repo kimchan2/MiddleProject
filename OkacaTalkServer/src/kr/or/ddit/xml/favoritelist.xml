@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+			PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+			"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<!-- namespace속성 : 아래에작성한 SQL을 호출할때 같이 사용된다. -->
+<sqlMap namespace="favorite">
+
+	<select id="getFavoriteVO" parameterClass="String" resultClass="fvlistVO">
+    select f.PL_INDEX, f.MEM_MAIL , P.CL_INDEX , p.PL_NAME , p.PL_PRICE , p.PL_IMAGE , p.PL_STOCK , p.PL_DATE, p.PL_SALES  
+	from favoritelist f ,productlist p
+    where f.PL_INDEX =P.PL_INDEX
+	AND f.mem_mail = #mem_mail#
+	</select>
+	
+	<delete id="deleteFavoriteVO" parameterClass="fvVO">
+		delete from favoritelist  
+		where pl_index = #pl_index#
+		and mem_mail = #mem_mail#
+	</delete>
+
+	<insert id="insertFavoriteVO" parameterClass="fvVO">
+		INSERT INTO FavoriteList VALUES(#pl_index# , #mem_mail#)
+	</insert>
+</sqlMap>
+
+
+
+

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="Shop_Dcate" prefHeight="80.0" prefWidth="780.0" style="-fx-border-color: none; -fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.shoppingMain.category.DcateFoodController">
+   <children>
+      <Button fx:id="Shop_Freshfood_Btn" layoutX="180.0" layoutY="20.0" mnemonicParsing="false" onAction="#ShopFreshfoodBtnOnAction" prefWidth="110.0" style="-fx-border-color: white; -fx-background-color: none;" text="신선식품">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="Shop_Manufacturefood_Btn" layoutX="290.0" layoutY="20.0" mnemonicParsing="false" onAction="#ShopManufacturefoodBtnOnAction" prefWidth="110.0" style="-fx-border-color: white; -fx-background-color: none;" text="가공식품">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="Shop_Healthyfood_Btn" layoutX="400.0" layoutY="20.0" mnemonicParsing="false" onAction="#ShopHealthyfoodBtnOnAction" prefWidth="110.0" style="-fx-border-color: white; -fx-background-color: none;" text="건강식품">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="Shop_Dailynecessity_Btn" layoutX="510.0" layoutY="20.0" mnemonicParsing="false" onAction="#ShopDailynecessityBtnOnAction" prefWidth="90.0" style="-fx-border-color: white; -fx-background-color: none;" text="생필품">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
